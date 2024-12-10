@@ -3,12 +3,16 @@ const express     = require('express');
 const bodyParser  = require('body-parser');
 const fccTesting  = require('./freeCodeCamp/fcctesting.js');
 const app         = express();
+const bcrypt      = require('bcrypt'); // added
 fccTesting(app);
 const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
 
-
+// simple GET in Express
+app.get('/', (req, res) => {
+    res.send('hello world')
+})
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
 
 
